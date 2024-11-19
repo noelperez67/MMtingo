@@ -6,13 +6,14 @@
     <title>Plaza Agropecuaria Mamá Tingó</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <!-- Header -->
 <header class="header">
     <div class="logo-container">
-        <img src="img/OIP.jpg" alt="Logo de Plaza Agropecuaria Mamá Tingó">
-        <h1>Plaza Agropecuaria Mamá Tingó</h1>
+        <img src="img/longoSinFondo.png" alt="Logo de Plaza Agropecuaria Mamá Tingó">
+<!--        <h1>Plaza Agropecuaria Mamá Tingó</h1>-->
     </div>
 
     <button class="hamburger" id="hamburger">
@@ -25,13 +26,22 @@
         <a href="#catalogo">Catálogo</a>
         <a href="#contacto">Contacto</a>
     </nav>
+    <div class="header-right">
+        <div class="header-search">
+            <input type="text" placeholder="Buscar...">
+            <button type="button">
+                <img src="img/green-search-icon.png" alt="Buscar" style="width: 20px; height: 20px;">
+            </button>
+        </div>
+        <a href="#" class="login-button">Iniciar Sesión</a>
+    </div>
 </header>
 
-<!-- Banner Promocional -->
-<div class="promo-banner">
-    <p class="animated-text">🎉 ¡Ofertas especiales en frutas y verduras esta semana! 🌟</p>
-    <a href="#promociones" class="static-link">Ver más</a>
-</div>
+<!--&lt;!&ndash; Banner Promocional &ndash;&gt;-->
+<!--<div class="promo-banner">-->
+<!--    <p>🎉 ¡Tenemos ofertas especiales para ti toda la semana! 🌟</p>-->
+<!--</div>-->
+
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-content">
@@ -41,10 +51,32 @@
     </div>
 </section>
 
-<!-- Búsqueda -->
-<section class="search">
-    <h2>Busca lo que necesitas</h2>
-    <input type="text" id="search-bar" placeholder="Buscar productos, servicios, etc.">
+
+<!-- Sección de Ofertas -->
+<section class="offers">
+    <h2 class="offers-title">Ofertas Especiales</h2>
+    <div class="offers-carousel">
+        <button class="carousel-control left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="offers-container">
+            <div class="offer-card">
+                <div class="badge">Oferta</div>
+                <img src="img/product1.jpg" alt="Producto 1">
+                <h3>Producto 1</h3>
+                <p class="price"><span class="original-price">$50.00</span> <span class="discount-price">$40.00</span></p>
+            </div>
+            <div class="offer-card">
+                <div class="badge">Oferta</div>
+                <img src="img/product2.jpg" alt="Producto 2">
+                <h3>Producto 2</h3>
+                <p class="price"><span class="original-price">$75.00</span> <span class="discount-price">$65.00</span></p>
+            </div>
+        </div>
+        <button class="carousel-control right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
 </section>
 
 <!-- Nosotros -->
@@ -73,46 +105,123 @@
     </div>
 </section>
 
-<!-- Catálogo -->
-<section id="catalogo" class="catalog">
-    <h2>Catálogo Destacado</h2>
-    <div class="catalog-items">
-        <div class="catalog-item">
-            <img src="img/product1.jpg" alt="Producto 1">
-            <h3>Producto 1</h3>
-            <p>Descripción breve del producto.</p>
-            <p><strong>$100</strong></p>
+<!-- Servicios Section (Based on the Image) -->
+<section class="services" style="margin-top: 2rem; text-align: center;">
+    <h2>TODO EN UN MISMO LUGAR</h2>
+    <div class="services-list" style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
+        <div class="service-item">
+            <img src="img/retiro-de-efectivo.png" alt="Realiza Retiros" style="width: 50px; height: 50px;">
+            <h3>Realiza retiros</h3>
         </div>
-        <div class="catalog-item">
-            <img src="img/product2.jpg" alt="Producto 2">
-            <h3>Producto 2</h3>
-            <p>Descripción breve del producto.</p>
-            <p><strong>$200</strong></p>
+        <div class="service-item">
+            <img src="img/metodo-de-pago.png" alt="Pagos de Servicios" style="width: 50px; height: 50px;">
+            <h3>Pagos de servicios</h3>
         </div>
-        <div class="catalog-item">
-            <img src="img/product3.jpg" alt="Producto 3">
-            <h3>Producto 3</h3>
-            <p>Descripción breve del producto.</p>
-            <p><strong>$300</strong></p>
+        <div class="service-item">
+            <img src="img/pedir-prestado.png" alt="Pagos de Préstamos" style="width: 50px; height: 50px;">
+            <h3>Pagos de préstamos</h3>
         </div>
     </div>
 </section>
 
-<!-- Botón de "Ir Arriba" -->
-<button id="scrollToTop" class="scroll-to-top hidden">
-    <i class="fas fa-arrow-up"></i>
-</button>
+<!-- Subagentes Bancarios Section -->
+<section class="banks" style="margin-top: 2rem; text-align: center;">
+    <h2>SUBAGENTES BANCARIOS</h2>
+    <div class="banks-list" style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
+        <img src="img/popular-icon.png" alt="Banco Popular" style="width: 100px; height: auto;">
+        <img src="img/bhd-icon.png" alt="Banco BHD León" style="width: 100px; height: auto;">
+        <img src="img/banreservas-icon.png" alt="Banreservas" style="width: 100px; height: auto;">
+    </div>
+</section>
+
+<!-- Catálogo por Departamentos -->
+<section id="departments">
+    <h2>Departamentos</h2>
+    <div class="tabs">
+        <button class="tab" onclick="showDepartment('carniceria')">Carnicería</button>
+        <button class="tab" onclick="showDepartment('embutidos')">Embutidos</button>
+        <button class="tab" onclick="showDepartment('graderia')">Gradería</button>
+    </div>
+    <div id="carniceria" class="tab-content">
+        <h3>Carnicería</h3>
+        <ul>
+            <p>Carne de res - $10.00/lb</p>
+            <p>Pollo - $8.00/lb</p>
+        </ul>
+    </div>
+    <div id="embutidos" class="tab-content hidden">
+        <h3>Embutidos</h3>
+        <ul>
+            <li>Salchicha - $5.00/pack</li>
+            <li>Jamón - $7.00/lb</li>
+        </ul>
+    </div>
+    <div id="graderia" class="tab-content hidden">
+        <h3>Gradería</h3>
+        <ul>
+            <li>Arroz - $3.00/pack</li>
+            <li>Frijoles - $4.00/pack</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Vacantes -->
+<section id="vacantes">
+    <h2>Aplica a nuestras vacantes</h2>
+    <form action="/submit-vacancy" method="post" enctype="multipart/form-data">
+        <label for="position">Vacante:</label>
+        <select id="position" name="position">
+            <option value="cajero">Cajero</option>
+            <option value="supervisor">Supervisor</option>
+        </select>
+        <label for="cv">Subir CV:</label>
+        <input type="file" id="cv" name="cv" accept=".pdf,.docx">
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<section id="ubicacion">
+    <h2>Ubícanos</h2>
+    <div id="map" style="height: 300px; width: 100%;"></div>
+</section>
+
+<!-- Incluir CSS y JS de Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    // Inicializar el mapa
+    const map = L.map('map').setView([18.4811, -69.9417], 15);
+
+    // Cargar las capas de mapa (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Agregar un marcador al mapa
+    L.marker([18.4811, -69.9417])
+        .addTo(map)
+        .bindPopup('Plaza Agropecuaria Mamá Tingó')
+        .openPopup();
+</script>
+
+<!--&lt;!&ndash; Mapa de Ubicación &ndash;&gt;-->
+<!--<section id="ubicacion">-->
+<!--    <h2>Ubícanos</h2>-->
+<!--    <div id="map" style="height: 300px;"></div>-->
+<!--</section>-->
 
 <!-- Footer -->
 <footer class="footer">
-    <p>&copy; 2024 Plaza Agropecuaria Mamá Tingó. Todos los derechos reservados.</p>
+    <p>&copy; 2024 Plaza Agropecuaria Mamá Tingo. Todos los derechos reservados.</p>
     <div class="social-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
+        <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="img/instagram-icon.png" alt="Instagram"></a>
+        <a href="#"><img src="img/whatsapp-icon.png" alt="WhatsApp"></a>
     </div>
 </footer>
 
 <script src="script.js"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>-->
 </body>
 </html>

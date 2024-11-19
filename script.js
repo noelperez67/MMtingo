@@ -1,52 +1,61 @@
-// Selección de elementos
+// Alternar Menú
 const hamburger = document.getElementById('hamburger');
 const navbar = document.getElementById('navbar');
-const scrollToTop = document.getElementById('scrollToTop');
-const searchBar = document.getElementById('search-bar');
-const catalogItems = document.querySelectorAll('.catalog-item');
+
+hamburger.addEventListener('click', () => {
+    navbar.classList.toggle('hidden');
+});
+
+// Mostrar Departamentos
+function showDepartment(departmentId) {
+    const contents = document.querySelectorAll('.tab-content');
+    contents.forEach(content => content.classList.add('hidden'));
+    document.getElementById(departmentId).classList.remove('hidden');
+}
+
+// Inicializar Mapa
+function initMap() {
+    const location = { lat: 18.4811, lng: -69.9417 }; // Coordenadas del lugar
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 15,
+        center: location,
+    });
+    new google.maps.Marker({ position: location, map: map });
+}
+
+// Carrusel de Ofertas
+const offersContainer = document.querySelector('.offers-container');
+const leftControl = document.querySelector('.carousel-control.left');
+const rightControl = document.querySelector('.carousel-control.right');
+
+let scrollPosition = 0;
+const cardWidth = 200 + 16; // Ancho de cada tarjeta + espacio entre tarjetas
+const visibleCards = 5;
+
+rightControl.addEventListener('click', () => {
+    const maxScroll = (offersContainer.children.length - visibleCards) * cardWidth;
+    scrollPosition = Math.min(scrollPosition + cardWidth * visibleCards, maxScroll);
+    offersContainer.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+leftControl.addEventListener('click', () => {
+    scrollPosition = Math.max(scrollPosition - cardWidth * visibleCards, 0);
+    offersContainer.style.transform = `translateX(-${scrollPosition}px)`;
+});
+
+// Auto-scroll para el carrusel cada 5 segundos
+setInterval(() => {
+    rightControl.click();
+}, 5000);
+
+// Función del carrusel
 const carouselItems = document.querySelectorAll('.carousel-item');
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
 
 let currentIndex = 0;
 
-// Función para alternar el menú hamburguesa
-hamburger.addEventListener('click', () => {
-    navbar.classList.toggle('hidden');
-});
-
-// Función para mostrar el botón "Ir Arriba"
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        scrollToTop.classList.add('visible');
-    } else {
-        scrollToTop.classList.remove('visible');
-    }
-});
-
-// Función para regresar al inicio de la página
-scrollToTop.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-    });
-});
-
-// Función para buscar en el catálogo
-searchBar.addEventListener('input', (e) => {
-    const searchText = e.target.value.toLowerCase();
-    catalogItems.forEach((item) => {
-        const itemName = item.querySelector('h3').textContent.toLowerCase();
-        if (itemName.includes(searchText)) {
-            item.style.display = 'block';
-        } else {
-            item.style.display = 'none';
-        }
-    });
-});
-
-// Función para mostrar el elemento activo en el carrusel
-function showCarouselItem(index) {
+function showItem(index) {
     carouselItems.forEach((item, i) => {
         item.classList.remove('active');
         if (i === index) {
@@ -55,26 +64,15 @@ function showCarouselItem(index) {
     });
 }
 
-// Función para avanzar al siguiente elemento del carrusel
-function nextCarouselItem() {
+nextButton.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % carouselItems.length;
-    showCarouselItem(currentIndex);
-}
+    showItem(currentIndex);
+});
 
-// Función para retroceder al elemento anterior del carrusel
-function prevCarouselItem() {
+prevButton.addEventListener('click', () => {
     currentIndex = (currentIndex === 0) ? carouselItems.length - 1 : currentIndex - 1;
-    showCarouselItem(currentIndex);
-}
-
-// Eventos para los botones del carrusel
-if (prevButton && nextButton) {
-    prevButton.addEventListener('click', prevCarouselItem);
-    nextButton.addEventListener('click', nextCarouselItem);
-}
-
-// Cambio automático del carrusel cada 5 segundos
-setInterval(nextCarouselItem, 5000);
+    showItem(currentIndex);
+});
 
 // Inicializar carrusel
-showCarouselItem(currentIndex);
+showItem(currentIndex);
