@@ -347,8 +347,8 @@ p {
 }
 /* Contenedor del banner */
 .promo-banner {
-    background-color: #ffe64c;
-    color: #2b5c2c;
+    background-color: #704f2a;
+    color: #f4f4f4;
     text-align: center;
     padding: 1rem;
     font-size: 1.2rem;
@@ -370,7 +370,7 @@ p {
     margin-top: 0.5rem;
     font-size: 1rem;
     text-decoration: underline;
-    color: #2b5c2c;
+    color: #f4f4f4;
     font-weight: bold;
     transition: color 0.3s;
 }
