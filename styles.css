@@ -388,3 +388,144 @@ p {
         transform: scale(1.2); /* Zoom */
     }
 }
+/* Sección de Ofertas */
+.offers {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.offers-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Carrusel de Ofertas */
+.offers-carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    padding: 1rem 0;
+}
+
+.offers-container {
+    display: flex;
+    gap: 1.5rem;
+    overflow: hidden; /* Oculta la barra de desplazamiento horizontal */
+    scroll-behavior: smooth;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    transform: translateX(0); /* Asegura el inicio del carrusel */
+}
+
+/* Tarjetas */
+.offer-card {
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+    flex: 0 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+    transform: translateY(-5px);
+}
+
+.offer-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.offer-card h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.price {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 0.5rem;
+}
+
+.discount-price {
+    color: #004aad;
+    font-weight: bold;
+}
+
+/* Círculo Amarillo */
+.badge {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    background-color: #704f2a;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones del Carrusel */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #004aad;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 10;
+}
+
+.carousel-control.left {
+    left: 10px;
+}
+
+.carousel-control.right {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background-color: #002f6c;
+}
+
+/* Oculta la barra de desplazamiento en navegadores */
+.offers-container::-webkit-scrollbar {
+    display: none;
+}
+
+.offers-container {
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+}
