@@ -4,96 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plaza Agropecuaria Mamá Tingó</title>
+    <!-- Archivo de estilos CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Iconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Fuente Poppins y una fuente secundaria -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+    <!-- AOS CSS para animaciones al hacer scroll -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Swiper CSS para sliders avanzados -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <body>
+
 <!-- Header -->
 <header class="header">
     <div class="logo-container">
         <img src="img/longoSinFondo.png" alt="Logo de Plaza Agropecuaria Mamá Tingó">
-<!--        <h1>Plaza Agropecuaria Mamá Tingó</h1>-->
     </div>
 
     <button class="hamburger" id="hamburger">
         <i class="fas fa-bars"></i>
     </button>
+
     <nav class="navbar hidden" id="navbar">
         <a href="#nosotros">Nosotros</a>
         <a href="#servicios">Servicios</a>
+        <a href="#productos">Productos</a>
         <a href="#promociones">Promociones</a>
-        <a href="#catalogo">Catálogo</a>
         <a href="#contacto">Contacto</a>
     </nav>
+
     <div class="header-right">
         <div class="header-search">
-            <input type="text" placeholder="Buscar...">
-            <button type="button">
-                <img src="img/green-search-icon.png" alt="Buscar" style="width: 20px; height: 20px;">
+            <input type="text" id="header-search-input" placeholder="Buscar productos...">
+            <button type="button" id="header-search-button">
+                <i class="fas fa-search"></i>
             </button>
         </div>
         <a href="#" class="login-button">Iniciar Sesión</a>
+        <a href="#" class="cart-button" id="cart-button">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cart-count">0</span>
+        </a>
     </div>
 </header>
 
-<!--&lt;!&ndash; Banner Promocional &ndash;&gt;-->
-<!--<div class="promo-banner">-->
-<!--    <p>🎉 ¡Tenemos ofertas especiales para ti toda la semana! 🌟</p>-->
-<!--</div>-->
-
 <!-- Hero Section -->
 <section class="hero">
-    <div class="hero-content">
-        <h2>¡Lleve más y pague menos!</h2>
+    <div class="hero-content" data-aos="fade-up">
+        <h2>¡Lleva más y paga menos!</h2>
         <p>Tu supermercado confiable en Santo Domingo Norte desde 2012.</p>
-        <a href="#catalogo" class="cta-button">Ver Catálogo</a>
+        <a href="#productos" class="cta-button">Ver Productos</a>
     </div>
 </section>
-
 
 <!-- Sección de Ofertas -->
-<section class="offers">
-    <h2 class="offers-title">Ofertas Especiales</h2>
-    <div class="offers-carousel">
-        <button class="carousel-control left">
-            <i class="fas fa-chevron-left"></i>
-        </button>
-        <div class="offers-container">
-            <div class="offer-card">
-                <div class="badge">Oferta</div>
-                <img src="img/product1.jpg" alt="Producto 1">
-                <h3>Producto 1</h3>
-                <p class="price"><span class="original-price">$50.00</span> <span class="discount-price">$40.00</span></p>
-            </div>
-            <div class="offer-card">
-                <div class="badge">Oferta</div>
-                <img src="img/product2.jpg" alt="Producto 2">
-                <h3>Producto 2</h3>
-                <p class="price"><span class="original-price">$75.00</span> <span class="discount-price">$65.00</span></p>
-            </div>
+<section id="promociones" class="offers">
+    <h2 id="offers-title" class="offers-title" data-aos="fade-up">Ofertas Especiales</h2>
+    <div class="swiper-container offers-swiper" data-aos="fade-up">
+        <div class="swiper-wrapper">
+            <!-- Las ofertas se cargarán dinámicamente desde JavaScript -->
         </div>
-        <button class="carousel-control right">
-            <i class="fas fa-chevron-right"></i>
-        </button>
+        <!-- Controles del Swiper -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
     </div>
 </section>
+
 
 <!-- Nosotros -->
 <section id="nosotros" class="about">
-    <h2>Nosotros</h2>
+    <h2 data-aos="fade-up">Nosotros</h2>
+    <p data-aos="fade-up">
+        Plaza Agropecuaria Mamá Tingó S.R.L. inició sus operaciones en Santo Domingo Norte, República Dominicana, el 9 de diciembre de 2012. Fundada por el señor Alejandro Arlequín, nos dedicamos a la venta de productos de primera necesidad.
+    </p>
+    <p data-aos="fade-up">
+        Con el eslogan <strong>"¡Lleve más y pague menos!"</strong>, expresamos nuestra firme decisión de comprometernos a optimizar la calidad y frescura de los productos que vendemos, ofreciendo a nuestros clientes los precios más bajos del mercado con un trato personalizado en el servicio.
+    </p>
+    <p data-aos="fade-up">
+        Plaza Agropecuaria Mamá Tingó favorece el intercambio comercial de productos de la canasta básica familiar a precios asequibles y de buena calidad para sus clientes.
+    </p>
     <div class="about-details">
-        <div>
+        <div data-aos="fade-up">
             <i class="fas fa-bullseye"></i>
             <h3>Misión</h3>
-            <p>Ofrecer a nuestros clientes una experiencia de compra cercana, con productos de alta calidad y precios accesibles.</p>
+            <p>Ofrecer a nuestros clientes una experiencia de compra cercana y de confianza, con productos de alta calidad y precios accesibles, que satisfagan las necesidades y preferencias de las familias de Villa Mella y comunidades aledañas. Nos comprometemos a brindar un servicio amable y eficiente, promoviendo el desarrollo económico y social de nuestra comunidad.</p>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-delay="100">
             <i class="fas fa-eye"></i>
             <h3>Visión</h3>
-            <p>Ser el supermercado preferido de Santo Domingo Norte, reconocido por su calidad.</p>
+            <p>Ser el supermercado preferido de los habitantes de Santo Domingo Norte, reconocido por su calidad.</p>
         </div>
-        <div>
+        <div data-aos="fade-up" data-aos-delay="200">
             <i class="fas fa-handshake"></i>
             <h3>Valores</h3>
             <ul>
@@ -105,74 +109,63 @@
     </div>
 </section>
 
-<!-- Servicios Section (Based on the Image) -->
-<section class="services" style="margin-top: 2rem; text-align: center;">
-    <h2>TODO EN UN MISMO LUGAR</h2>
-    <div class="services-list" style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
-        <div class="service-item">
-            <img src="img/retiro-de-efectivo.png" alt="Realiza Retiros" style="width: 50px; height: 50px;">
-            <h3>Realiza retiros</h3>
+<!-- Servicios -->
+<section id="servicios" class="services">
+    <h2 data-aos="fade-up">Servicios que ofrecemos</h2>
+    <div class="services-list">
+        <div class="service-item" data-aos="zoom-in">
+            <img src="img/sub-agente-bancario.png" alt="Sub Agentes Bancarios">
+            <h3>Sub Agentes Bancarios</h3>
         </div>
-        <div class="service-item">
-            <img src="img/metodo-de-pago.png" alt="Pagos de Servicios" style="width: 50px; height: 50px;">
-            <h3>Pagos de servicios</h3>
+        <div class="service-item" data-aos="zoom-in" data-aos-delay="100">
+            <img src="img/pago-facturas.png" alt="Pago de Facturas Eléctricas">
+            <h3>Pago de Facturas Eléctricas</h3>
         </div>
-        <div class="service-item">
-            <img src="img/pedir-prestado.png" alt="Pagos de Préstamos" style="width: 50px; height: 50px;">
-            <h3>Pagos de préstamos</h3>
+        <div class="service-item" data-aos="zoom-in" data-aos-delay="200">
+            <img src="img/recargas-telefonicas.png" alt="Recargas Telefónicas">
+            <h3>Recargas Telefónicas</h3>
         </div>
     </div>
 </section>
 
-<!-- Subagentes Bancarios Section -->
-<section class="banks" style="margin-top: 2rem; text-align: center;">
-    <h2>SUBAGENTES BANCARIOS</h2>
-    <div class="banks-list" style="display: flex; justify-content: center; gap: 2rem; margin-top: 1rem;">
-        <img src="img/popular-icon.png" alt="Banco Popular" style="width: 100px; height: auto;">
-        <img src="img/bhd-icon.png" alt="Banco BHD León" style="width: 100px; height: auto;">
-        <img src="img/banreservas-icon.png" alt="Banreservas" style="width: 100px; height: auto;">
+<!-- Subagentes Bancarios -->
+<section class="banks">
+    <h2 data-aos="fade-up">Sub Agentes Bancarios</h2>
+    <div class="banks-list" data-aos="fade-up">
+        <img src="img/popular-icon.png" alt="Banco Popular">
+        <img src="img/bhd-icon.png" alt="Banco BHD León">
+        <img src="img/banreservas-icon.png" alt="Banreservas">
     </div>
 </section>
 
-<!-- Catálogo por Departamentos -->
-<section id="departments">
-    <h2>Departamentos</h2>
-    <div class="tabs">
-        <button class="tab" onclick="showDepartment('carniceria')">Carnicería</button>
-        <button class="tab" onclick="showDepartment('embutidos')">Embutidos</button>
-        <button class="tab" onclick="showDepartment('graderia')">Gradería</button>
+<!-- Productos -->
+<section id="productos" class="productos">
+    <h2 data-aos="fade-up">Productos Destacados</h2>
+    <div class="filtros" data-aos="fade-up">
+        <input type="text" id="search" placeholder="Buscar productos...">
+        <select id="categoria">
+            <option value="todos">Todas las Categorías</option>
+            <option value="frutas">Frutas</option>
+            <option value="verduras">Verduras</option>
+            <option value="lacteos">Lácteos</option>
+            <!-- Más categorías -->
+        </select>
     </div>
-    <div id="carniceria" class="tab-content">
-        <h3>Carnicería</h3>
-        <ul>
-            <p>Carne de res - $10.00/lb</p>
-            <p>Pollo - $8.00/lb</p>
-        </ul>
-    </div>
-    <div id="embutidos" class="tab-content hidden">
-        <h3>Embutidos</h3>
-        <ul>
-            <li>Salchicha - $5.00/pack</li>
-            <li>Jamón - $7.00/lb</li>
-        </ul>
-    </div>
-    <div id="graderia" class="tab-content hidden">
-        <h3>Gradería</h3>
-        <ul>
-            <li>Arroz - $3.00/pack</li>
-            <li>Frijoles - $4.00/pack</li>
-        </ul>
+    <div class="productos-lista" id="productos-lista" data-aos="fade-up">
+        <!-- Productos dinámicos -->
     </div>
 </section>
 
 <!-- Vacantes -->
-<section id="vacantes">
-    <h2>Aplica a nuestras vacantes</h2>
-    <form action="/submit-vacancy" method="post" enctype="multipart/form-data">
+<section id="empleos">
+    <h2 data-aos="fade-up">Aplica a nuestras vacantes</h2>
+    <form action="/submit-vacancy" method="post" enctype="multipart/form-data" id="vacancy-form" data-aos="fade-up">
         <label for="position">Vacante:</label>
         <select id="position" name="position">
+            <option value="">Seleccione una vacante</option>
             <option value="cajero">Cajero</option>
             <option value="supervisor">Supervisor</option>
+            <!-- Añade más opciones de vacantes según sea necesario -->
         </select>
         <label for="cv">Subir CV:</label>
         <input type="file" id="cv" name="cv" accept=".pdf,.docx">
@@ -180,48 +173,52 @@
     </form>
 </section>
 
-<section id="ubicacion">
-    <h2>Ubícanos</h2>
-    <div id="map" style="height: 300px; width: 100%;"></div>
+<!-- Noticias -->
+<section id="noticias" class="news">
+    <h2 data-aos="fade-up">Noticias</h2>
+    <!-- Aquí puedes agregar las noticias relevantes -->
+    <p data-aos="fade-up">Próximamente compartiremos las últimas noticias y actualizaciones.</p>
+</section>
+
+<!-- Contacto -->
+<section id="contacto">
+    <h2 data-aos="fade-up">Contacto</h2>
+    <p data-aos="fade-up">
+        Ave. Hermanas Mirabal No. 60, Esq. Calle 4ta, Urbanización Vista Bella.<br>
+        Teléfono: 809-245-5306<br>
+        Email: <a href="mailto:info@mamatingo.do">info@mamatingo.do</a>
+    </p>
+    <h3 data-aos="fade-up">Ubícanos</h3>
+    <div id="map" data-aos="fade-up"></div>
 </section>
 
 <!-- Incluir CSS y JS de Leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-<script>
-    // Inicializar el mapa
-    const map = L.map('map').setView([18.4811, -69.9417], 15);
-
-    // Cargar las capas de mapa (OpenStreetMap)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    // Agregar un marcador al mapa
-    L.marker([18.4811, -69.9417])
-        .addTo(map)
-        .bindPopup('Plaza Agropecuaria Mamá Tingó')
-        .openPopup();
-</script>
-
-<!--&lt;!&ndash; Mapa de Ubicación &ndash;&gt;-->
-<!--<section id="ubicacion">-->
-<!--    <h2>Ubícanos</h2>-->
-<!--    <div id="map" style="height: 300px;"></div>-->
-<!--</section>-->
+<!-- Botón de Scroll hacia arriba -->
+<button class="scroll-to-top" id="scrollToTopBtn">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
 <!-- Footer -->
 <footer class="footer">
-    <p>&copy; 2024 Plaza Agropecuaria Mamá Tingo. Todos los derechos reservados.</p>
+    <p>&copy; 2024 Plaza Agropecuaria Mamá Tingó. Todos los derechos reservados.</p>
     <div class="social-links">
-        <a href="#"><img src="img/facebook-icon.png" alt="Facebook"></a>
-        <a href="#"><img src="img/instagram-icon.png" alt="Instagram"></a>
-        <a href="#"><img src="img/whatsapp-icon.png" alt="WhatsApp"></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/8092455306" target="_blank"><i class="fab fa-whatsapp"></i></a>
     </div>
 </footer>
 
+<!-- Scripts -->
+<!-- Swiper JS para sliders -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- AOS JS para animaciones al hacer scroll -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<!-- GSAP para animaciones avanzadas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<!-- Script principal -->
 <script src="script.js"></script>
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>-->
 </body>
 </html>
